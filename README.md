@@ -1,0 +1,2 @@
+# Preventing-Money-laundering-using-social-network-analysis
+This projects aims to find money laundering.To accomplish this, basically two key methods have been used. The first step is to identify frequent transactions.The second step is establishing a link between the clients who were engaged and determining the amount of money laundered. We will be using hash based Apriori Algorithm to detect the frequent transactions.
