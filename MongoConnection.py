@@ -1,13 +1,11 @@
-import pymongo 
+import pymongo
 import openpyxl
 
 def LoadData(excelSheet,sheetName,numberOfRecords):
 
-    print("Load Data")
-    client = pymongo.MongoClient()
+    print("Loading Data")
+    client = pymongo.MongoClient('localhost',27017)
     db = client.MoneyLaundering
-   
-
     try:
         db.bankingTransactions.insert({
             "hour": 1,
@@ -20,10 +18,8 @@ def LoadData(excelSheet,sheetName,numberOfRecords):
             "oldBalanceDest": 0.0,
             "newBalanceDest": 0.0,
             "isFraud": 0,
-            "isFlaggedFraud": 0,
-        })
-        print("Data Loaded Successfully")
-        
+            "isFlaggedFraud": 0,})
+        print("Insertion Successful")
     except:
         print("Insertion Unsuccessful!")
 

@@ -20,10 +20,9 @@ def showFrequentTransactions():
     bucketContainer = ft.hashBasedBucketCount(tupleList)
 
     bucketThreshold = e2.get()
-    print("Filtered transactions(On Basis of Bucket Count) : ")
     filteredBucketTuples = ft.filterOnBucketCount(tupleList, bucketContainer, int(bucketThreshold))
+    print("Filtered transactions(On Basis of Bucket Count) : ",len(filteredBucketTuples))
     e4.insert(0,len(filteredBucketTuples))
-
     actualCountThreshold = e3.get()
     print("Filtered Transactions(On Basis of actual Frequency) : ")
     actualCount = ft.filterOnActualCount(filteredBucketTuples, actualTransFreq, int(actualCountThreshold))
